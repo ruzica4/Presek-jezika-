@@ -4,6 +4,35 @@ print "------PROGRAM DEMONSTRIRA PRESEK JEZIKA DVA AUTOMATA NAD ISTOM AZBUKOM---
 print "----------------------------------------------------------------------------"
 print "\n\n"
 
+print "Unesite broj elemenata azbuke automata : "
+br_azb = raw_input()
+while(br_azb.isdigit() == False):
+	print "Niste uneli broj! Pokusajte ponovo!"
+	br_azb = raw_input()
+
+br_azb = int(br_azb)
+print "\n\n"
+
+
+'''
+print "Ispis azbuke : "
+for i in range(0, br_azb):
+	print azbuka[i]	
+'''
+
+print "Unesite azbuku automata : "
+azbuka = []
+i = 0
+while(i<br_azb):
+	az = raw_input().strip()
+	if(az.isalpha() == True):
+		azbuka.append(az)
+		i = i + 1
+	else:
+		print "Niste uneli slovo! Pokusajte ponovo!"
+
+
+
 print "-------------"
 print "PRVI AUTOMAT:"
 print "-------------"
@@ -67,33 +96,6 @@ while(t):
 			t = 0		
 
 
-print "Unesite broj elemenata azbuke automata : "
-br_azb11 = raw_input()
-while(br_azb11.isdigit() == False):
-	print "Niste uneli broj! Pokusajte ponovo!"
-	br_azb11 = raw_input()
-
-br_azb1 = int(br_azb11)
-
-
-
-print "Unesite azbuku automata : "
-azbuka1 = []
-i = 0
-while(i<br_azb1):
-	az = raw_input().strip()
-	if(az.isalpha() == True):
-		azbuka1.append(az)
-		i = i + 1
-	else:
-		print "Niste uneli slovo! Pokusajte ponovo!"
-	
-'''
-print "Ispis azbuke : "
-for i in range(0, br_azb1):
-	print azbuka1[i]	
-'''
-
 print "Unesite broj prelaza : "
 br_prel11 = raw_input()
 
@@ -124,7 +126,7 @@ while(i<br_prel1):
 			slovo = slovo.strip()
 			stanje2 = int(stanje2)
 			
-			if((stanje1 in stanja1) and (slovo in azbuka1) and (stanje2 in stanja1)):
+			if((stanje1 in stanja1) and (slovo in azbuka) and (stanje2 in stanja1)):
 				
 				if(not(prelazi1.has_key((stanje1, slovo)))):
 					prelazi1[(stanje1, slovo)] = stanje2	
@@ -210,34 +212,6 @@ while(t):
 			t = 0		
 
 
-print "Unesite broj elemenata azbuke automata : "
-br_azb22 = raw_input()
-while(br_azb22.isdigit() == False):
-	print "Niste uneli broj! Pokusajte ponovo!"
-	br_azb22 = raw_input()
-
-br_azb2 = int(br_azb22)
-
-
-
-print "Unesite azbuku automata : "
-azbuka2 = []
-i = 0
-while(i<br_azb2):
-	az = raw_input().strip()
-	if(az.isalpha() == True):
-		azbuka2.append(az)
-		i = i + 1
-	else:
-		print "Niste uneli slovo! Pokusajte ponovo!"
-	
-'''
-print "Ispis azbuke : "
-for i in range(0, br_azb1):
-	print azbuka1[i]	
-'''
-
-
 print "Unesite broj prelaza : "
 br_prel22 = raw_input()
 
@@ -268,7 +242,7 @@ while(i<br_prel2):
 			slovo = slovo.strip()
 			stanje2 = int(stanje2)
 			
-			if((stanje1 in stanja2) and (slovo in azbuka2) and (stanje2 in stanja2)):
+			if((stanje1 in stanja2) and (slovo in azbuka) and (stanje2 in stanja2)):
 				
 				if(not(prelazi2.has_key((stanje1, slovo)))):
 					prelazi2[(stanje1, slovo)] = stanje2	
@@ -321,7 +295,7 @@ for i in prelazi:
 
 for i in prelazi:
 	for j in prelazi:
-		for k in azbuka1:
+		for k in azbuka:
 			f2 = j[0]
 			s2 = j[1]
 			
@@ -356,4 +330,3 @@ for i in prelazi:
 			else:
 				continue					
 					
-
