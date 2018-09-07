@@ -237,11 +237,6 @@ for i in range(0, br_azb1):
 	print azbuka1[i]	
 '''
 
-for i in azbuka1:
-	if i not in azbuka2:
-		print "Greska! Azbuke se ne poklapaju! Program se prekida!"
-		sys.exit()
-
 
 print "Unesite broj prelaza : "
 br_prel22 = raw_input()
