@@ -1,2 +1,3 @@
 # Presek-jezika-
-Program demonstrira presek jezika dva konacna deterministicka automata nad istom azbukom.
+Program demonstrira presek jezika dva konačna deterministička automata nad istom azbukom.
+Ovo je bio projekat na predmetu Leksička analiza.
